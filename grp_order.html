@@ -1,0 +1,836 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;600;800&display=swap">
+
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html,
+        body,
+        body div,
+        span,
+        object,
+        iframe,
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6,
+        p,
+        blockquote,
+        pre,
+        abbr,
+        address,
+        cite,
+        code,
+        del,
+        dfn,
+        em,
+        img,
+        ins,
+        kbd,
+        q,
+        samp,
+        small,
+        strong,
+        sub,
+        sup,
+        var,
+        b,
+        i,
+        dl,
+        dt,
+        dd,
+        ol,
+        ul,
+        li,
+        fieldset,
+        form,
+        label,
+        legend,
+        table,
+        caption,
+        tbody,
+        tfoot,
+        thead,
+        tr,
+        th,
+        td,
+        article,
+        aside,
+        canvas,
+        details,
+        figcaption,
+        figure,
+        footer,
+        header,
+        hgroup,
+        menu,
+        nav,
+        section,
+        summary,
+        time,
+        mark,
+        audio,
+        video {
+            margin: 0;
+            padding: 0;
+            border: 0;
+            font-family: 'Noto Sans KR';
+            font-weight: 400;
+            font-size: 18px;
+            letter-spacing: 0;
+            line-height: normal;
+            vertical-align: baseline;
+            word-break: keep-all;
+            word-wrap: break-word;
+        }
+
+        ul,
+        ol {
+            margin: 0 auto;
+            padding: 0;
+            list-style: none;
+        }
+
+        button {
+            font-family: 'Noto Sans KR';
+            font-weight: 400;
+            font-size: 18px;
+            color: #000;
+            background: none;
+            border: 0;
+            cursor: pointer;
+            outline-style: none;
+        }
+
+        #contents {
+            width: 100%;
+            max-width: 1920px;
+            min-width: 1440px;
+            min-height: calc(100vh - 240px);
+            margin: 0 auto;
+            position: relative;
+        }
+
+        #event {
+            padding-top: 170px;
+            padding-bottom: 120px;
+        }
+
+        .w1440 {
+            width: 1440px;
+            padding: 0 40px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        #contents .pageTitle {
+            margin-bottom: 33px;
+        }
+
+        #contents .pageTitle .tit {
+            font-family: 'Noto Sans KR';
+            font-weight: 800;
+            font-size: 34px;
+            color: #000;
+            line-height: 1.47;
+        }
+
+        #event .wrap_tabmenu {
+            margin-bottom: 60px;
+        }
+
+        .tab_type1 {
+            position: relative;
+            width: 100%;
+        }
+
+        .tab_type1.col3 .tab {
+            width: 33.33%
+        }
+
+        .tab_type1 .tab a:hover,
+        .tab_type1 .tab p.active,
+        .tab_type1 .tab button:hover,
+        .tab_type1 .tab button.active {
+            font-weight: 800;
+            color: #000;
+            left: 0%;
+            width: 100%;
+        }
+
+        .tab_type1 .tab p,
+        .tab_type1 .tab button {
+            position: relative;
+            display: block;
+            font-family: 'Noto Sans KR';
+            font-weight: 200;
+            font-size: 22px;
+            color: #777;
+            text-align: center;
+            padding-bottom: 15px;
+            cursor: pointer;
+        }
+
+        .tab_type1 .tab_wrap {
+            width: 100%;
+            overflow: visible;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .tab_type1 .tab_inner {
+            display: flex;
+        }
+
+        .tab_type1 .tab {
+            flex-shrink: 0;
+        }
+
+        #event .group_order .wrap_slide_benefit .box_benefit {
+            width: 100%;
+            margin-bottom: 52px;
+        }
+
+        #event .group_order .wrap_slide_benefit .box_benefit {
+            width: 412px;
+            height: 560px;
+            padding: 350px 30px 0 30px;
+            background: #fff;
+            border-radius: 16px;
+            -webkit-box-shadow: 0 8px 25px 0 rgba(0, 0, 0, 0.1);
+            box-shadow: 0 8px 25px 0 rgba(0, 0, 0, 0.1);
+            position: relative;
+        }
+
+        #event .group_order .wrap_slide_benefit .box_benefit .txt {
+            font-family: 'Noto Sans KR';
+            font-family: 600;
+            font-size: 30px;
+            margin-bottom: 38px;
+        }
+
+        #event .group_order .wrap_slide_benefit .box_benefit .flag_badge {
+            position: absolute;
+            left: 30px;
+            top: -2px;
+        }
+
+        .flag_badge {
+            display: inline-block;
+            width: 88px;
+            height: 84px;
+            background: url('img/grp_order_img/ic_flag1.png') no-repeat;
+            background-size: contain;
+        }
+
+        .flag_badge span {
+            display: inline-block;
+            width: 80px;
+            height: 100%;
+            font-family: 'Noto Sans KR';
+            font-weight: 400;
+            font-size: 16px;
+            color: #fff;
+            text-align: center;
+            padding-top: 24px;
+        }
+
+        #event .group_order .wrap_slide_benefit .box_benefit.con1 {
+            background: url('img/grp_order_img/group_benefit_bg4.png') no-repeat center 60px;
+        }
+
+        #event .group_order .wrap_slide_benefit .box_benefit.con2 {
+            background: url('img/grp_order_img/group_benefit_bg1.png') no-repeat center 60px;
+        }
+
+        #event .group_order .wrap_slide_benefit .box_benefit.con3 {
+            background: url('img/grp_order_img/group_benefit_bg3.png') no-repeat center 60px;
+        }
+
+
+        #event .group_order .wrap_slide_benefit {
+            width: 100%;
+            margin-bottom: 52px;
+        }
+
+        #event .group_order .wrap_slide_benefit ul li {
+            float: left;
+            margin-right: 41px;
+        }
+
+        #event .group_order .wrap_slide_benefit .txt {
+            font-family: 'Noto Sans KR';
+            font-weight: 600;
+            font-size: 30px;
+            margin-bottom: 38px;
+        }
+
+        #event .group_order .wrap_slide_benefit .box_benefit.con2 .bg_txt {
+            width: 234px;
+            height: 134px;
+            text-align: center;
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 114px;
+            margin: auto;
+            padding-top: 20px;
+        }
+
+        #event .group_order .wrap_slide_benefit .box_benefit.con2 .bg_txt .txt1 em {
+            display: inline-block;
+            font-family: 'Noto Sans KR';
+            font-weight: 800;
+            font-size: 60px;
+            line-height: 1;
+            margin-right: 5px;
+        }
+
+        #event .group_order .wrap_slide_benefit .box_benefit.con2 .bg_txt .txt2 {
+            display: inline-block;
+            font-family: 'Noto Sans KR';
+            font-weight: 600;
+            font-size: 14px;
+        }
+
+        #event .group_order .wrap_slide_benefit .box_benefit .wrap_desc .desc1 {
+            height: 95px;
+            font-family: 'Noto Sans KR';
+            font-weight: 800;
+            font-size: 24px;
+            line-height: 1.4;
+        }
+
+        #event .group_order .wrap_slide_benefit .box_benefit .wrap_desc .desc2 {
+            font-family: 'Noto Sans KR';
+            font-weight: 400;
+            font-size: 18px;
+            line-height: 1.5;
+        }
+
+        #event h4.tit {
+            font-family: 'Noto Sans KR';
+            font-weight: 800;
+            font-size: 24px;
+            margin-bottom: 25px;
+            position: relative;
+        }
+
+        #event .group_order .receipt_info .desc {
+            font-family: 'Noto Sans KR';
+            font-weight: 400;
+            line-height: 1.5;
+            margin-bottom: 45px;
+            font-size: 18px;
+        }
+
+        #event .group_order .group_set .tit {
+            display: inline-block;
+            margin: bottom 35px;
+        }
+
+        #event .group_order .group_set .btn_list {
+            margin-left: 45px;
+        }
+
+        .btn_typeC1 {
+            display: inline-block;
+            width: auto;
+            height: 32px;
+        }
+
+        .btn_typeC1 span {
+            display: inline-block;
+            width: 100%;
+            height: 100%;
+            font-family: 'Noto Sans KR';
+            font-weight: 400;
+            font-size: 16px;
+            color: #000;
+            text-align: center;
+            line-height: 30px !important;
+            padding: 0 16px;
+            background: #fff;
+            border: 1px solid #aaa;
+            border-radius: 10px;
+        }
+
+        .btn_ac a,
+        .btn_ac button {
+            margin: 0 8px;
+        }
+
+        .btn_typeB3 {
+            display: inline-block;
+            width: 520px;
+            height: 60px;
+            overflow: visible;
+        }
+
+        .btn_typeB3 span {
+            display: block;
+            width: 100%;
+            height: 100%;
+            font-family: 'Noto Sans KR';
+            font-weight: 400;
+            font-size: 18px;
+            color: #000;
+            text-align: center;
+            line-height: 58px;
+            background: #fff;
+            border: 1px solid #777;
+            border-radius: 16px;
+            box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        #event .group_order .customer_info .btn_ac {
+            margin-top: 40px;
+        }
+
+        .btn_ac {
+            text-align: center;
+            vertical-align: top;
+        }
+
+        #event .group_order .support {
+            padding-bottom: 45px;
+        }
+
+        .gap_border1 {
+            border-bottom: 8px solid #f7f7f7;
+        }
+
+        #event .group_order .customer_info {
+            padding-top: 52px;
+            margin-bottom: 60px;
+        }
+
+        #event .wrap_input .item :first-child {
+            margin-bottom: 0;
+        }
+
+        #event .wrap_input .item {
+            position: relative;
+            font-family: 'Noto Sans KR';
+            font-weight: 400;
+            font-size: 18px;
+            line-height: 1.5;
+            padding-left: 200px;
+            margin-top: 20px;
+        }
+
+        #event .wrap_input .item .t_tit3 {
+            line-height: 1.5;
+            position: absolute;
+            left: 40px;
+            top: 10px;
+        }
+
+        .t_tit3 .nec {
+            display: inline-block;
+            font-family: 'Noto Sans KR';
+            font-weight: 800;
+            font-size: 16px;
+            margin-left: 5px;
+            color: #DE4850;
+
+        }
+
+        .input_type1 {
+            width: 100%;
+            height: 40px;
+            font-family: 'Noto Sans KR';
+            font-weight: 400;
+            font-size: 18px;
+            color: #000;
+            padding: 0 20px;
+            border-bottom: 1px solid #ddd;
+            vertical-align: middle;
+            background: #fff;
+            position: relative
+        }
+
+        .btn_typeB3 span {
+            display: block;
+            width: 100%;
+            height: 100%;
+            font-family: 'Noto Sans KR';
+            font-weight: 400;
+            font-size: 18px;
+            color: #000;
+            text-align: center;
+            line-height: 58px;
+            background: #fff;
+            border: 1px solid #777;
+            border-radius: 16px;
+            box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        input,
+        textarea,
+        select {
+            letter-spacing: 0;
+            border: 0;
+            outline-style: none;
+            border-radius: 0;
+        }
+
+        .checkbox_ui.type1 label {
+            position: relative;
+            padding-left: 39px;
+            cursor: pointer;
+        }
+
+        .checkbox_ui.type1 label span {
+            display: inline-block;
+            font-family: 'Noto Sans KR';
+            font-weight: 400;
+            font-size: 18px;
+            color: #000;
+            vertical-align: middle;
+        }
+
+        .checkbox_ui.type1 label .cbx_off {
+            position: absolute;
+            left: 0;
+            top: 5px;
+            width: 24px;
+            height: 24px;
+            vertical-align: middle;
+            background: url('img/login_img/chk_bg1.png') no-repeat;
+            border-radius: 50%;
+        }
+
+        .checkbox_ui.type1 label .cbx_bg {
+            position: absolute;
+            left: 0;
+            top: 5px;
+            width: 24px;
+            height: 24px;
+            background: #DA1A32;
+            background: url('img/login_img/chk_bg1_on.png') no-repeat;
+            border-radius: 50%;
+            overflow: hidden;
+            transform: scale(0);
+            transition: 0.3s;
+        }
+
+        .checkbox_ui.type1 label .cbx_bg .cbx_on {
+            position: absolute;
+            left: 0;
+            top: 0px;
+            width: 22px;
+            height: 22px;
+            background: #DA1A32;
+            border-radius: 50%;
+            transition: 0.3s;
+        }
+
+        .checkbox_ui input[type=checkbox] {
+            position: absolute;
+            z-index: -1000;
+            left: -1000px;
+            overflow: hidden;
+            clip: rect(0 0 0 0);
+            height: 1px;
+            width: 1px;
+            margin: -1px;
+            padding: 0;
+            border: 0;
+        }
+
+        .checkbox_ui.type1 input[type="checkbox"]:checked+label .cbx_bg {
+            -ms-transform: scale(1);
+            transform: scale(1);
+            transition: 0.3s;
+        }
+
+        .checkbox_ui.type1 input[type="checkbox"]:checked+label .cbx_bg .cbx_on {
+            width: 0px;
+            left: 22px;
+            transition: 0.3s;
+            transition-delay: 0.2s;
+        }
+
+        #event .chk_privacy .detail {
+            margin-left: 15px;
+            vertical-align: middle;
+        }
+    </style>
+
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="CSS/head_foot.css">
+
+</head>
+
+<body>
+
+    <header>
+        <div class="headwrap">
+            <div class="headinner">
+                <div class="headlogo">
+                    <img src="img/logo1.png" alt="x" class="mainlogo">
+                </div>
+                <ul class="headmenu">
+                    <li class="foodmenu">메뉴</li>
+                    <li class="evnt&ptnr">이벤트&제휴</li>
+                    <li class="e_coupon">E쿠폰주문</li>
+                    <li class="grp_order">단체주문</li>
+                </ul>
+                <ul class="headutil">
+                    <li class="location">주소를 입력하세요</li>
+                    <li class="login">Login</li>
+                    <li class="cart">Cart</li>
+                </ul>
+            </div>
+        </div>
+        <div class="headdropdownwrap">
+            <div class="headdropdown">
+                <ul class="menudrop">
+                    <li class="foodmenu">피자</li>
+                    <li class="foodmenu">마이박스(1인메뉴)</li>
+                    <li class="foodmenu">세트</li>
+                    <li class="foodmenu">파스타&치킨</li>
+                    <li class="foodmenu">사이드&음료</li>
+                </ul>
+                <ul class="eventdrop">
+                    <li class="evnt&ptnr">이벤트</li>
+                    <li class="evnt&ptnr">제휴할인</li>
+                </ul>
+                <ul class="organizationdrop">
+                    <li class="grp_order">단체배달</li>
+                    <li class="grp_order">모바일 상품권(단체/기업)</li>
+                    <li class="grp_order">지류상품권</li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <div id="contents" class="subPage">
+        <div id="event">
+            <div class="group_order">
+                <div class="w1440">
+                    <div class="pageTitle">
+                        <h2 class="tit">단체주문</h2>
+                    </div>
+                    <div class="wrap_tabmenu">
+                        <div class="tab_ui tab_type1 col3">
+                            <div class="tab_wrap">
+                                <div class="tab_inner">
+                                    <div class="tab">
+                                        <p class="active">단체 배달</p>
+                                    </div>
+                                    <div class="tab">
+                                        <p>모바일 상품권 (10장 이상 대량 구매 시)</p>
+                                    </div>
+                                    <div class="tab">
+                                        <p>지류 상품권</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="wrap_slide_benefit">
+                        <h3 class="txt">피자헛만의 단체주문 혜택!</h3>
+                        <ul class="clear">
+                            <li>
+                                <div class="box_benefit con1">
+                                    <span class="flag_badge">
+                                        <span>혜택1</span>
+                                    </span>
+                                    <div class="wrap_desc">
+                                        <p class="desc1">빠르고 간편한 주문 접수</p>
+                                        <p class="desc2">많이 주문하시는 기업전용 Package를 확인 후 메뉴만 골라 주세요.</p>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="box_benefit con2">
+                                    <span class="flag_badge">
+                                        <span>혜택2</span>
+                                    </span>
+                                    <div class="bg_txt">
+                                        <span class="txt1">
+                                            <em>20</em>
+                                            "%"
+                                        </span>
+                                        <br>
+                                        <span class="txt2">정가 구매 시 최대 20% 증정</span>
+                                    </div>
+                                    <div class="wrap_desc">
+                                        <p class="desc1">피자헛 상품권 제공</p>
+                                        <p class="desc2">구매하시는 제품 종류에 따라 총 결제 금액 최대 20% 해당하는 상품권을 제공해드립니다.</p>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="box_benefit con3">
+                                    <span class="flag_badge">
+                                        <span>혜택3</span>
+                                    </span>
+                                    <div class="wrap_desc">
+                                        <p class="desc1">한번 결제로 주문 피자 모두 다른 배달주소로 동시에 배달</p>
+                                        <p class="desc2">10판 이상 주문 시 모두 다른 배달 주소로 배달해드립니다.</p>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="group_set">
+                        <h4 class="tit">단체주문 세트</h4>
+                        <a href="#" class="btn_typeC1 btn_list">
+                            <span>리스트 보기</span>
+                        </a>
+                    </div>
+                    <div class="receipt_info">
+                        <h4 class="tit">접수방법</h4>
+                        <div class="desc">
+                            " 9판 이하 주문시 인근 매장으로 연락해주시면 빠르게 주문하실 수 있습니다. "
+                            <br>
+                            " 10판 이상의 단체 주문을 희망하시는 경우 "
+                            <br>
+                            " 아래 접수란을 통하여 정보를 기입 후 단체 문의 접수를 진행하시면 담당자 확인 후"
+                            <br>
+                            " 고객님께 순차적으로 연락을 드리고 있습니다. "
+                            <br>
+                            " 단체 주문 관련하여 문의사항은 아래 번호로 문의 부탁드립니다. "
+                            <br>
+                            " [080-805-5588] "
+                        </div>
+                    </div>
+                    <div class="support gap_border1">
+                        <h4 class="tit">접수가능일 및 문의사항</h4>
+                        <div class="wrap_input">
+                            <div class="item">
+                                <span class="t_tit3">평일</span>
+                                <span class="con">운영시간 10:30 ~ 17:00</span>
+                            </div>
+                            <div class="item">
+                                <span class="t_tit3">주말/공휴일</span>
+                                <span class="con">
+                                    " 접수 시 순차적으로 연락드리고 있으며, "
+                                    <br>
+                                    " 주말/공휴일 주문 요청은 최소 2~3일 전 연락을 주셔야만 도움을 드릴 수 있습니다. "
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="customer_info">
+                        <h4 class="tit">주문 고객 정보</h4>
+                        <div class="chk_privacy">
+                            <span class="checkbox_ui type1">
+                                <input id="check_agree" type="checkbox" name="privacy"
+                                    class="ng-untouched ng-pristine ng-valid">
+                                <label for="check_agree">
+                                    <span class="cbx_off"></span>
+                                    <span class="cbx_bg">
+                                        <span class="cbx_on"></span>
+                                    </span>
+                                    <span class="txt">개인정보 수집 및 이용(필수)</span>
+                                </label>
+                            </span>
+                            <p class="btn_typeC1 detail">
+                                <span>자세히 보기</span>
+                            </p>
+                        </div>
+                        <div class="wrap_input">
+                            <div class="item">
+                                <p class="t_tit3"></p>
+                                <span class="wrap_i"></span>
+                            </div>
+                            <div class="item">
+                                <p class="t_tit3">주문자
+                                    <span class="nec">*</span>
+                                </p>
+                                <span class="wrap_i">
+                                    <input type="text" value placeholder="이름 및 기업명을 입력해주세요." name="name"
+                                        class="input_type1 ng-untouched ng-pristine ng-valid">
+                                    </input>
+                                </span>
+                            </div>
+                            <div class="item">
+                                <p class="t_tit3">주문점
+                                    <span class="nec">*</span>
+                                </p>
+                                <span class="wrap_i">
+                                    <input type="text" value placeholder="지점명을 입력해주세요." name="name"
+                                        class="input_type1 ng-untouched ng-pristine ng-valid">
+                                    </input>
+                                </span>
+                            </div>
+                            <div class="item">
+                                <p class="t_tit3">휴대폰 번호
+                                    <span class="nec">*</span>
+                                </p>
+                                <span class="wrap_i">
+                                    <input type="tel" value placeholder="휴대폰 번호를 입력해 주세요." name="phone" maxlength="11"
+                                        class="input_type1" ng-untouched ng-pristine ng-valid>
+                                    </input>
+                                </span>
+                            </div>
+                            <div class="item">
+                                <p class="t_tit3">이메일
+                                    <span class="nec">*</span>
+                                </p>
+                                <span class="wrap_i">
+                                    <input type="email" value placeholder="이메일을 입력해 주세요." name="email"
+                                        class="input_type1" ng-untouched ng-pristine ng-valid>
+                                    </input>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="btn_ac">
+                            <button class="btn_typeB3">
+                                <span>접수</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footwrap">
+            <div class="footinner">
+                <div class="footlogo">
+                    <img src="img/logo1.png" alt="">
+                </div>
+                <div class="footcontent">
+                    <p class="address">서울시 영등포구 국회대로 74길 4, 9~11층</p>
+                    <p class="registerid">
+                        <span>사업자등록번호 120-81-63948</span>
+                        <span>통신판매업신고번호 제2018-서울영등포-1220호</span>
+                    </p>
+                    <p class="ceoname">
+                        <span>한국피자헛유한회사 대표이사 : 조윤상</span>
+                        <span>개인정보 보호책임자 : 윤성호</span>
+                    </p>
+                    <div class="copyright">
+                        <p>Copyright © BY PIZZA HUT KOREA LTD. ALL RIGHT RESERVED</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="JS/head_foot.js"></script>
+    <script src="JS/link.js"></script>
+
+
+</body>
+
+</html>
