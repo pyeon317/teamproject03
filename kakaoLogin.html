@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- 카카오 SDK로드 -->
+    <script src="JS/kakao.min.js"></script>
+
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="CSS/head_foot.css">
+</head>
+
+<body>
+
+    <header>
+        <div class="headwrap">
+            <div class="headinner">
+                <div class="headlogo">
+                    <img src="img/logo1.png" alt="x" class="mainlogo">
+                </div>
+                <ul class="headmenu">
+                    <li class="foodmenu">메뉴</li>
+                    <li class="evnt&ptnr">이벤트&제휴</li>
+                    <li class="e_coupon">E쿠폰주문</li>
+                    <li class="grp_order">단체주문</li>
+                </ul>
+                <ul class="headutil">
+                    <li class="location">주소를 입력하세요</li>
+                    <li class="login">Login</li>
+                    <li class="cart">Cart</li>
+                </ul>
+            </div>
+        </div>
+        <div class="headdropdownwrap">
+            <div class="headdropdown">
+                <ul class="menudrop">
+                    <li class="foodmenu">피자</li>
+                    <li class="foodmenu">마이박스(1인메뉴)</li>
+                    <li class="foodmenu">세트</li>
+                    <li class="foodmenu">파스타&치킨</li>
+                    <li class="foodmenu">사이드&음료</li>
+                </ul>
+                <ul class="eventdrop">
+                    <li class="evnt&ptnr">이벤트</li>
+                    <li class="evnt&ptnr">제휴할인</li>
+                </ul>
+                <ul class="organizationdrop">
+                    <li class="grp_order">단체배달</li>
+                    <li class="grp_order">모바일 상품권(단체/기업)</li>
+                    <li class="grp_order">지류상품권</li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+
+    <!-- 카카오 API
+    3008c6f0a7b7d650af365dc266840e00 -->
+
+    <script>
+        //1. 카카오 SDK 초기화
+        Kakao.init('3008c6f0a7b7d650af365dc266840e00');
+        Kakao.isInitialized();
+        //console.log(Kakao.isInitialized()); // KEY값이 마지면 콘솔에 TRUE가 뜬다.
+
+
+        //2. 인가서버 창 띄우기
+        Kakao.Auth.authorize({
+            redirectUri: 'http://127.0.0.1:5500/teamproject03/evnt&ptnr.html', //우리가 설정한 임시 서버 주소 > 각자 컴퓨터의 주소 쓸 것
+        });
+
+    </script>
+
+    <footer>
+        <div class="footwrap">
+            <div class="footinner">
+                <div class="footlogo">
+                    <img src="img/logo1.png" alt="">
+                </div>
+                <div class="footcontent">
+                    <p class="address">서울시 영등포구 국회대로 74길 4, 9~11층</p>
+                    <p class="registerid">
+                        <span>사업자등록번호 120-81-63948</span>
+                        <span>통신판매업신고번호 제2018-서울영등포-1220호</span>
+                    </p>
+                    <p class="ceoname">
+                        <span>한국피자헛유한회사 대표이사 : 조윤상</span>
+                        <span>개인정보 보호책임자 : 윤성호</span>
+                    </p>
+                    <div class="copyright">
+                        <p>Copyright © BY PIZZA HUT KOREA LTD. ALL RIGHT RESERVED</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="JS/head_foot.js"></script>
+    <script src="JS/link.js"></script>
+
+
+</body>
+
+</html>

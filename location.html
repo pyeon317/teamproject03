@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kakao API</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="CSS/head_foot.css">
+
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        html,
+        body,
+        body div,
+        span,
+        object,
+        iframe,
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6,
+        p,
+        blockquote,
+        pre,
+        abbr,
+        address,
+        cite,
+        code,
+        del,
+        dfn,
+        em,
+        img,
+        ins,
+        kbd,
+        q,
+        samp,
+        small,
+        strong,
+        sub,
+        sup,
+        var,
+        b,
+        i,
+        dl,
+        dt,
+        dd,
+        ol,
+        ul,
+        li,
+        fieldset,
+        form,
+        label,
+        legend,
+        table,
+        caption,
+        tbody,
+        tfoot,
+        thead,
+        tr,
+        th,
+        td,
+        article,
+        aside,
+        canvas,
+        details,
+        figcaption,
+        figure,
+        footer,
+        header,
+        hgroup,
+        menu,
+        nav,
+        section,
+        summary,
+        time,
+        mark,
+        audio,
+        video {
+            margin: 0;
+            padding: 0;
+            border: 0;
+            font-family: 'Noto Sans KR';
+            font-weight: 400;
+            font-size: 18px;
+            letter-spacing: 0;
+            line-height: normal;
+            vertical-align: baseline;
+            word-break: keep-all;
+            word-wrap: break-word;
+        }
+
+        input,
+        textarea,
+        select {
+            font-family: 'Noto Sans KR';
+            font-weight: 400;
+            font-size: 18px;
+            color: #000;
+            letter-spacing: 0;
+            border: 0;
+            outline-style: none;
+            border-radius: 0;
+            width: 100%;
+        }
+
+        #contents .pageTitle {
+            margin-bottom: 33px;
+        }
+
+        #contents .pageTitle .tit {
+            font-family: 'Noto Sans KR';
+            font-weight: 800;
+            font-size: 34px;
+            color: #000;
+            line-height: 1.47;
+        }
+
+        #contents .w800 .tit1 {
+            font-family: 'Noto Sans KR';
+            font-weight: 800;
+            font-size: 24px;
+            color: #000;
+            line-height: 1.47;
+            padding-top: 100px;
+        }
+
+        #contents .result .t_tit2 {
+            font-family: 'Noto Sans KR';
+            font-weight: 800;
+            font-size: 24px;
+            color: #000;
+            line-height: 1.47;
+            padding-top: 30px;
+        }
+
+        #etc .set_address {
+            padding-top: 170px;
+        }
+
+        .w1440 {
+            width: 1440px;
+            padding: 0 100px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .w800 {
+            width: 700px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .result {
+            width: 700px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        button {
+            font-family: 'Noto Sans KR';
+            font-weight: 400;
+            font-size: 18px;
+            color: #000;
+            border: 0;
+            cursor: pointer;
+            outline-style: none;
+        }
+
+        .wrap_i {
+            display: inline-block;
+            width: 100%;
+            position: relative;
+        }
+
+        .input_type1 {
+            color: #000;
+            vertical-align: middle;
+            background: #fff;
+            position: relative;
+        }
+
+        .wrap_input_search2 {
+            position: relative;
+        }
+
+        .wrap_input_search2 .wrap_i input {
+            width: 100%;
+            height: 60px;
+            font-family: 'Noto Sans KR';
+            font-weight: 400;
+            font-size: 24px;
+            padding: 0 70px 0 40px;
+            border-bottom: 2px solid #000;
+        }
+
+        .wrap_input_search2 .btn_search {
+            width: 27px;
+            height: 27px;
+            text-indent: -9999px;
+            text-align: left;
+            background: url('img/e_cpn_img/ic_search2.png') no-repeat;
+            position: absolute;
+            right: 40px;
+            top: 0;
+            bottom: 25px;
+            margin: auto;
+            bottom: 160px;
+        }
+
+        #contents .result input {
+            font-family: 'Noto Sans KR';
+            font-weight: 400;
+            font-size: 18px;
+            color: #000;
+            line-height: 1.47;
+            padding-top: 5px;
+
+        }
+
+        #etc .set_address .result .btn_ac {
+            margin-top: 50px;
+        }
+
+        .btn_ac {
+            text-align: center;
+            vertical-align: top;
+        }
+
+        .btn_typeB1 {
+            display: inline-block;
+            width: 320px;
+            height: 90px;
+            overflow: visible;
+        }
+
+        .btn_ac a,
+        .btn_ac button {
+            margin: 0 8px;
+        }
+
+        .btn_typeB1 span {
+            display: block;
+            width: 100%;
+            height: 100%;
+            font-family: 'Noto Sans KR';
+            font-weight: 400;
+            font-size: 24px;
+            color: #fff;
+            text-align: center;
+            line-height: 90px;
+            background: #DA1A32;
+            border-radius: 16px;
+            box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.2);
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div class="headwrap">
+            <div class="headinner">
+                <div class="headlogo">
+                    <img src="img/logo1.png" alt="x" class="mainlogo">
+                </div>
+                <ul class="headmenu">
+                    <li class="foodmenu">메뉴</li>
+                    <li class="evnt&ptnr">이벤트&제휴</li>
+                    <li class="e_coupon">E쿠폰주문</li>
+                    <li class="grp_order">단체주문</li>
+                </ul>
+                <ul class="headutil">
+                    <li class="location">주소를 입력하세요</li>
+                    <li class="login">Login</li>
+                    <li class="cart">Cart</li>
+                </ul>
+            </div>
+        </div>
+        <div class="headdropdownwrap">
+            <div class="headdropdown">
+                <ul class="menudrop">
+                    <li class="foodmenu">피자</li>
+                    <li class="foodmenu">마이박스(1인메뉴)</li>
+                    <li class="foodmenu">세트</li>
+                    <li class="foodmenu">파스타&치킨</li>
+                    <li class="foodmenu">사이드&음료</li>
+                </ul>
+                <ul class="eventdrop">
+                    <li class="evnt&ptnr">이벤트</li>
+                    <li class="evnt&ptnr">제휴할인</li>
+                </ul>
+                <ul class="organizationdrop">
+                    <li class="grp_order">단체배달</li>
+                    <li class="grp_order">모바일 상품권(단체/기업)</li>
+                    <li class="grp_order">지류상품권</li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+
+
+    <div id="contents" class="subPage">
+        <div id="etc">
+            <div class="set_address">
+                <div class="w1440">
+                    <div class="pageTitle">
+                        <h2 class="tit">주소 찾기</h2>
+                    </div>
+                    <div class="w800">
+                        <div class="wrap_input_search2">
+                            <span class="wrap_i">
+                                <input type="text" placeholder="돋보기를 눌러 건물명, 도로명 또는 지번으로 검색"
+                                    class="input_type1 ng-untouched ng-pristine ng-valid" name="query" readonly />
+                            </span>
+                            <input type="text" class="btn_search" id="address_kakao" name="address"
+                                style="cursor: pointer;">
+                            <h3 class="tit1">주소</h3>
+                            <input type="text" name="address" id="address_kakao2" style="border-bottom: 1px solid;"
+                                readonly>
+                        </div>
+                    </div>
+                    <div class="result">
+                        <h3 class="t_tit2">상세주소</h3>
+                        <input type="text" name="address_detail" style="border-bottom: 1px solid;">
+                        <ul class="list_addr clear">
+                            <button type="button" class="addr">
+                                <span></span>
+                            </button>
+                            <span>
+                                <div class="btn_ac">
+                                    <button class="btn_typeB1">
+                                        <span>선택한 주소로 설정</span>
+                                    </button>
+                                </div>
+                            </span>
+                            </button>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <tr>
+
+    </tr>
+
+    <script>
+        window.onload = function () {
+            document.getElementById("address_kakao").addEventListener("click", function () { //주소입력칸을 클릭하면
+                //카카오 지도 발생
+                new daum.Postcode({
+                    oncomplete: function (data) { //선택시 입력값 세팅
+                        document.getElementById("address_kakao2").value = data.address; // 주소 넣기
+                        document.querySelector("input[name=address_detail]").focus(); //상세입력 포커싱
+                    }
+                }).open();
+            });
+        }
+
+    </script>
+    <footer>
+        <div class="footwrap">
+            <div class="footinner">
+                <div class="footlogo">
+                    <img src="img/logo1.png" alt="">
+                </div>
+                <div class="footcontent">
+                    <p class="address">서울시 영등포구 국회대로 74길 4, 9~11층</p>
+                    <p class="registerid">
+                        <span>사업자등록번호 120-81-63948</span>
+                        <span>통신판매업신고번호 제2018-서울영등포-1220호</span>
+                    </p>
+                    <p class="ceoname">
+                        <span>한국피자헛유한회사 대표이사 : 조윤상</span>
+                        <span>개인정보 보호책임자 : 윤성호</span>
+                    </p>
+                    <div class="copyright">
+                        <p>Copyright © BY PIZZA HUT KOREA LTD. ALL RIGHT RESERVED</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="JS/head_foot.js"></script>
+    <script src="JS/link.js"></script>
+</body>
+
+</html>

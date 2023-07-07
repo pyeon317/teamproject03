@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="CSS/head_foot.css">
+</head>
+
+<style>
+    .section1 {
+        width: 100%;
+        padding-top: 200px;
+    }
+
+    .sectionwrap {
+        width: 1360px;
+        margin: 0 auto;
+        height: 220px;
+    }
+
+    .sectionwrap>.title {
+        font-size: 30px;
+    }
+
+    .navwrap {
+        margin-top: 40px;
+    }
+
+    .navtitle>ul {
+        display: flex;
+        justify-content: center;
+        border-bottom: 2px solid #dadada;
+    }
+
+    .navtitle>ul>li {
+        position: relative;
+        flex-grow: 1;
+        font-weight: 700;
+        font-size: 25px;
+        display: inline-block;
+        text-align: center;
+        padding: 20px 0;
+        cursor: pointer;
+    }
+
+    .navtitle>ul>li:before {
+        content: "";
+        position: absolute;
+        bottom: -2px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 100%;
+        height: 2px;
+        background-color: transparent;
+        transition: background-color 0.3s ease;
+    }
+
+    .navtitle>ul>li:hover:before {
+        background-color: red;
+    }
+
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+    ul,
+    li {
+        list-style: none;
+    }
+
+    .w1440 {
+        width: 1440px;
+        padding: 0 40px;
+        margin: 0 auto;
+        position: relative;
+    }
+
+    .wrap_evtList {
+        width: 1330px;
+        margin: 0 auto;
+
+    }
+
+    #event .event_list .wrap_evtList ul li {
+        float: left;
+        width: 420px;
+        height: 160px;
+        margin-right: 20px;
+        margin-bottom: 30px;
+    }
+
+    #event .event_list .wrap_evtList ul li p {
+        display: block;
+        width: 100%;
+        height: 100%;
+        border-radius: 16px;
+        overflow: hidden;
+        box-shadow: 0 8px 25px 0 rgba(0, 0, 0, 0.1);
+        position: relative;
+    }
+</style>
+
+<body>
+
+    <header>
+        <div class="headwrap">
+            <div class="headinner">
+                <div class="headlogo">
+                    <img src="img/logo1.png" alt="x" class="mainlogo">
+                </div>
+                <ul class="headmenu">
+                    <li class="foodmenu">메뉴</li>
+                    <li class="evnt&ptnr">이벤트&제휴</li>
+                    <li class="e_coupon">E쿠폰주문</li>
+                    <li class="grp_order">단체주문</li>
+                </ul>
+                <ul class="headutil">
+                    <li class="location">주소를 입력하세요</li>
+                    <li class="login">Login</li>
+                    <li class="cart">Cart</li>
+                </ul>
+            </div>
+        </div>
+        <div class="headdropdownwrap">
+            <div class="headdropdown">
+                <ul class="menudrop">
+                    <li class="foodmenu">피자</li>
+                    <li class="foodmenu">마이박스(1인메뉴)</li>
+                    <li class="foodmenu">세트</li>
+                    <li class="foodmenu">파스타&치킨</li>
+                    <li class="foodmenu">사이드&음료</li>
+                </ul>
+                <ul class="eventdrop">
+                    <li class="evnt&ptnr">이벤트</li>
+                    <li class="evnt&ptnr">제휴할인</li>
+                </ul>
+                <ul class="organizationdrop">
+                    <li class="grp_order">단체배달</li>
+                    <li class="grp_order">모바일 상품권(단체/기업)</li>
+                    <li class="grp_order">지류상품권</li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <section class="section1">
+        <div class="sectionwrap">
+            <h1 class="title">이벤트&제휴</h1>
+            <div class="navwrap">
+                <div class="navtitle">
+                    <ul>
+                        <li>이벤트</li>
+                        <li>제휴할인</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div id="contents" class="subPage">
+        <div id="event">
+            <div class="event_list">
+                <div class="w1440">
+                    <div class="wrap_tabmenu">
+                        <div class="tab_ui tab_type1 col2">
+                            <!-- 준식 -->
+                            <div class="tab_wrap"></div>
+                            <!-- 준식 -->
+                        </div>
+                    </div>
+                </div>
+                <div class="wrap_evtList">
+                    <ul class="clear">
+                        <li>
+                            <p title="img" style="background-image: url('img/evnt_ptnr_img/19.png')"></p>
+                        </li>
+                        <li>
+                            <p title="img" style="background-image: url('img/evnt_ptnr_img/18.png')"></p>
+                        </li>
+                        <li>
+                            <p title="img" style="background-image: url('img/evnt_ptnr_img/17.png')"></p>
+                        </li>
+                        <li>
+                            <p title="img" style="background-image: url('img/evnt_ptnr_img/16.png')"></p>
+                        </li>
+                        <li>
+                            <p title="img" style="background-image: url('img/evnt_ptnr_img/15.png')"></p>
+                        </li>
+                        <li>
+                            <p title="img" style="background-image: url('img/evnt_ptnr_img/14.png')"></p>
+                        </li>
+                        <li>
+                            <p title="img" style="background-image: url('img/evnt_ptnr_img/13.png')"></p>
+                        </li>
+                        <li>
+                            <p title="img" style="background-image: url('img/evnt_ptnr_img/12.png')"></p>
+                        </li>
+                        <li>
+                            <p title="img" style="background-image: url('img/evnt_ptnr_img/11.png')"></p>
+                        </li>
+                        <li>
+                            <p title="img" style="background-image: url('img/evnt_ptnr_img/10.png')"></p>
+                        </li>
+                        <li>
+                            <p title="img" style="background-image: url('img/evnt_ptnr_img/9.png')"></p>
+                        </li>
+                        <li>
+                            <p title="img" style="background-image: url('img/evnt_ptnr_img/8.png')"></p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <script>
+
+        var urlSearch = new URLSearchParams(location.search);
+
+        var value = urlSearch.get("code");
+        console.log(value);
+
+        //4. 토큰발급받기
+        if (value != null) {
+            ajax();
+        }
+
+        function ajax() {
+
+            var url = "http://127.0.0.1:5500/999프로젝트/evnt&ptnr.html"; //redirect uri
+            var key = "3fabe9798550d202e3e6af2d9e7ed541"; //rest API키 값
+
+
+            var data = "grant_type=authorization_code" +
+                "&client_id=" + key +
+                "&redirect_uri=" + url +
+                "&code=" + value;
+
+            //토큰 요청
+            fetch('https://kauth.kakao.com/oauth/token', {
+                method: "post",
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded; charset=utf-8'
+                }, //"Content-Type" - '요청에 타입'
+                //form 형식의 데이터를 사용할 때 - 키=값&키=값 / json - {키:값}
+                body: data //body - 데이터
+
+            }).then(function (response) {
+                return response.json(); //return이 json 형식으로 와서 받을 때 json으로
+            }).then(function (data) {
+                console.log(data); //정상적으로 실행하면 카카오서버에서 토큰이 넘어온다.
+
+                //브라우저 종료시에 모두 삭제
+                //쿠키 & 세션 스토리지에 토큰 값
+                sessionStorage.setItem("kakao_access", data.access_token); //access 토큰 값
+
+                //SDK에 Access Token 저장
+                //Kakao.Auth.setAccessToken(data.access_token); 
+
+                //사용자 정보 API호출하기
+                getUser(data.access_token);
+            });
+
+        }
+
+        //5. 토큰기반으로 API호출하기 JS로 처리
+        function getUser(token) {
+
+            fetch('https://kapi.kakao.com/v2/user/me', {
+                method: 'post',
+                headers: {
+                    'Authorization': 'Bearer ' + token,
+                    "Content-type": 'application/x-www-form-urlencoded;charset=utf-8',
+
+                },
+
+            }).then(function (response) {
+                return response.json();
+            }).then(function (data) {
+                console.log(data);
+            })
+
+        }
+    </script>
+
+    <footer>
+        <div class="footwrap">
+            <div class="footinner">
+                <div class="footlogo">
+                    <img src="img/logo1.png" alt="">
+                </div>
+                <div class="footcontent">
+                    <p class="address">서울시 영등포구 국회대로 74길 4, 9~11층</p>
+                    <p class="registerid">
+                        <span>사업자등록번호 120-81-63948</span>
+                        <span>통신판매업신고번호 제2018-서울영등포-1220호</span>
+                    </p>
+                    <p class="ceoname">
+                        <span>한국피자헛유한회사 대표이사 : 조윤상</span>
+                        <span>개인정보 보호책임자 : 윤성호</span>
+                    </p>
+                    <div class="copyright">
+                        <p>Copyright © BY PIZZA HUT KOREA LTD. ALL RIGHT RESERVED</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="JS/head_foot.js"></script>
+    <script src="JS/link.js"></script>
+
+</body>
+
+</html>
