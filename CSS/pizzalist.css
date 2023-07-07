@@ -1,0 +1,162 @@
+.section1 {
+    width: 100%;
+    padding-top: 200px;
+}
+
+.sectionwrap {
+    width: 1360px;
+    margin: 0 auto;
+    height: 300px;
+}
+
+.sectionwrap>.title {
+    font-size: 30px;
+}
+
+.navwrap {
+    margin-top: 40px;
+}
+
+.navtitle>ul {
+    display: flex;
+    justify-content: center;
+    border-bottom: 2px solid #dadada;
+}
+
+.navtitle>ul>li {
+    position: relative;
+    flex-grow: 1;
+    font-weight: 700;
+    font-size: 25px;
+    display: inline-block;
+    text-align: center;
+    padding: 20px 0;
+    cursor: pointer;
+}
+
+.navtitle>ul>li:before {
+    content: "";
+    position: absolute;
+    bottom: -2px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    height: 2px;
+    background-color: transparent;
+    transition: background-color 0.3s ease;
+}
+
+.navtitle>ul>li:hover:before {
+    background-color: red;
+}
+
+
+
+.navcontent {
+    margin-top: 30px;
+}
+
+.navcontent>ul {
+    overflow: hidden;
+}
+
+.navcontent>ul>li {
+    float: left;
+    border: 1px solid #bdbdbd;
+    border-radius: 8px;
+    color: #bdbdbd;
+    font-weight: 400;
+    font-size: 18px;
+    margin-right: 20px;
+    padding: 20px 40px;
+    cursor: pointer;
+}
+
+.navcontent>ul>li:hover {
+    border-color: white;
+    background-color: red;
+    color: white;
+    font-weight: 700;
+}
+
+.pizzapanel {
+    border-radius: 10px;
+    overflow: hidden;
+    width: 1360px;
+    margin: 0 auto;
+    background-image: url('img/pizzapanel.jpg');
+    background-size: 1080px;
+}
+
+
+.pizzawrap {
+    margin-top: 70px;
+    margin-bottom: 70px;
+}
+
+.pizzaouter {
+    width: 1360px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.pizzainner {
+    margin-right: 50px;
+    margin-bottom: 20px;
+    float: left;
+}
+
+.pizzainner4 {
+    margin-bottom: 20px;
+    float: left;
+}
+
+.pizzainner:hover {
+    cursor: pointer;
+}
+
+.pizzatitle {
+    text-align: left;
+    font-size: 25px;
+    margin-bottom: 25px;
+}
+
+.pizzapricediv {
+    margin-bottom: 10px;
+}
+
+.pizzasize {
+    display: inline-block;
+    padding: 0 15px;
+    font-size: 18px;
+    color: red;
+}
+
+.pizzapr {
+    display: inline-block;
+    font-size: 18px;
+}
+
+.pizzahash {
+    margin-top: 35px;
+    font-size: 18px;
+}
+
+.pizzabannerwrap {
+    margin: 30px 0;
+}
+
+.pizzabanner {
+    width: 1360px;
+    height: 120px;
+    margin: 0 auto;
+    background-color: rgb(196, 0, 0);
+}
+
+.pizzabannercontent {
+    line-height: 120px;
+    font-size: 25px;
+    margin-left: 50px;
+    color: white;
+    font-weight: 700;
+}
