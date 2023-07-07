@@ -27,8 +27,8 @@ sizebtn.addEventListener('click', function (e) {
     }
 
     totalsize.innerHTML += ' ' + sizebtnleft1.innerHTML;
-    var price = parseInt(sizebtnleft2.innerHTML.replace(/[^0-9]/g, ''));
-    totalprice.innerHTML = "총 1개 " + price + "원 담기";
+
+    totalprice.innerHTML = "총 " + document.countForm.count.value + "개 " + (sizebtnleft2.innerHTML.replace(/[^0-9]/g, '') * document.countForm.count.value) + "원 담기";
 
   } else if (e.target.classList.contains('sizeclickR')) {
     sizebtnleft.style.backgroundColor = 'rgb(218, 215, 215)';
@@ -43,10 +43,11 @@ sizebtn.addEventListener('click', function (e) {
     }
 
     totalsize.innerHTML += ' ' + sizebtnright1.innerHTML;
-    var price = parseInt(sizebtnright2.innerHTML.replace(/[^0-9]/g, ''));
-    totalprice.innerHTML = "총 1개 " + price + "원 담기";
+
+    totalprice.innerHTML = "총 " + document.countForm.count.value + "개 " + (sizebtnright2.innerHTML.replace(/[^0-9]/g, '') * document.countForm.count.value) + "원 담기";
 
   }
+
 });
 
 var doughbtnwrap = document.querySelector('.doughbtnwrap');
@@ -54,7 +55,7 @@ var totaldough = document.querySelector('.totaldough');
 var doughspecial = document.querySelector('.special > span');
 var doughoriginal = document.querySelector('.original > span');
 
-doughbtnwrap.addEventListener('change', function() {
+doughbtnwrap.addEventListener('change', function () {
   if (document.getElementById('s1').checked) {
     totaldough.innerHTML = doughspecial.textContent;
   } else if (document.getElementById('s2').checked) {
@@ -63,8 +64,21 @@ doughbtnwrap.addEventListener('change', function() {
 });
 
 
-// var countbtnwrap = document.querySelector('.countwrap');
-// countbtnwrap.addEventListener('change', function(e) {
-//     totalprice.innerHTML = document.countForm.count.value;
-// })
+document.querySelector('.countwrap').addEventListener('change', tocount);
+function tocount(e) {
+  if (totalsize.innerHTML.includes('L')) {
+    totalprice.innerHTML = "총 " + document.countForm.count.value + "개 " + (sizebtnleft2.innerHTML.replace(/[^0-9]/g, '') * document.countForm.count.value) + "원 담기";
+  } else if (totalsize.innerHTML.includes('M')) {
+    totalprice.innerHTML = "총 " + document.countForm.count.value + "개 " + (sizebtnright2.innerHTML.replace(/[^0-9]/g, '') * document.countForm.count.value) + "원 담기";
+   }
+};
 
+document.querySelector('.pay').addEventListener('click', function() {
+  if(!totalprice.innerHTML.includes('0개')) {
+    sessionStorage.setItem('pizzavariable', totalsize.innerHTML);
+    sessionStorage.setItem('pizzadough', totaldough.innerHTML);
+    sessionStorage.setItem('pizzaprice', totalprice.innerHTML);
+    sessionStorage.setItem('pizzaimg', document.querySelector('.pizzaimg').src);
+    location.href = 'pizzapay.html';
+  }
+})

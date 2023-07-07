@@ -4,7 +4,7 @@ var headlist = document.querySelectorAll('.headdropdown > ul');
 
 var header = document.querySelector('header');
 var foodmenu = document.querySelector('.foodmenu');
-var coupon = document.querySelector('.coupon');
+var coupon = document.querySelector('.e_coupon');
 var order = document.querySelector('.order');
 var menudrop = document.querySelector('.menudrop');
 var eventdrop = document.querySelector('.eventdrop');

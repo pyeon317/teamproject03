@@ -264,7 +264,7 @@
             width: 24px;
             height: 24px;
             vertical-align: middle;
-            background: url('img/login_img/chk_bg1.png') no-repeat;
+            background: url('login_img/chk_bg1.png') no-repeat;
             border-radius: 50%;
         }
 
@@ -280,7 +280,7 @@
             top: 5px;
             width: 24px;
             height: 24px;
-            background: url('img/login_img/chk_bg1_on.png') no-repeat;
+            background: url('login_img/chk_bg1_on.png') no-repeat;
             border-radius: 50%;
             overflow: hidden;
             -ms-transform: scale(0);
@@ -340,13 +340,13 @@
         #sign .sign_in .social_login .btns i.naver {
             width: 86px;
             height: 16px;
-            background-image: url('img/login_img/logo_naver.png');
+            background-image: url('login_img/logo_naver.png');
         }
 
         #sign .sign_in .social_login .btns i.kakao {
             width: 53px;
             height: 16px;
-            background-image: url('img/login_img/logo_kakao.png');
+            background-image: url('login_img/logo_kakao.png');
         }
 
         .t_tit1 {
@@ -357,7 +357,6 @@
             line-height: 1.5;
             padding-top: 30px;
             padding-bottom: 20px;
-            text-align: center;
         }
 
 
@@ -420,11 +419,15 @@
             width: 100%;
             height: 120px;
         }
-    </style>
 
+        #sign .sign_in .social_login .t_tit1 {
+            text-align: center;
+        }
+    </style>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="CSS/head_foot.css">
+
 
 </head>
 
@@ -434,7 +437,7 @@
         <div class="headwrap">
             <div class="headinner">
                 <div class="headlogo">
-                    <img src="img/logo1.png" alt="x" class="mainlogo">
+                    <img src="img/logo1.png" alt="x" class="mainlogo" style="cursor: pointer;">
                 </div>
                 <ul class="headmenu" style="padding-top: 30px;">
                     <li class="foodmenu">메뉴</li>
@@ -471,85 +474,52 @@
         </div>
     </header>
 
-
     <div id="contents" class="subPage">
         <div id="sign">
             <div class="sign_in">
                 <div class="w1440">
                     <div class="pageTitle">
-                        <h2 class="tit">로그인</h2>
+                        <h2 class="tit">회원정보</h2>
                     </div>
                     <div class="top_txt">
-                        <p class="t_tit4">"반갑습니다."
-                            <br>"로그인 하고 더 큰 혜택을 즐기세요!"
+                        <p class="t_tit4">
+                            <br>"더 큰 혜택을 즐기세요!"
                         </p>
                     </div>
 
                     <form class="ng-valid ng-pristine ng-untouched" data-gtm-form-interact-id="0">
                         <div class="w520">
                             <div class="item no_mt">
-                                <p class="t_tit3">이메일(ID)</p>
+                                <p class="t_tit3"></p>
                                 <span class="wrap_i">
-                                    <input type="email" value placeholder="이메일(ID) 주소를 입력해주세요." name="username"
-                                        class="input_type1 ng-untouched ng-pristine ng-valid">
-
-                                    </input>
-
+                                    <div class="img" style="background-image: url('') ">
+                                        <img class="profile" src="">
+                                    </div>
                                 </span>
                             </div>
 
                             <div class="item">
                                 <p class="t_tit3">비밀번호</p>
                                 <span class="wrap_i">
-                                    <input type="password" value placeholder="비밀번호를 입력해 주세요." name="password"
+                                    <input type="password" value placeholder="정보 수정시 입력해 주세요." name="password"
                                         class="input_type1 ng-untouched ng-pristine ng-valid">
                                     </input>
                                 </span>
                             </div>
 
-                            <div class="auto_login_chk">
-                                <span class="checkbox_ui type1">
-                                    <input id="chkTemp1-2" type="checkbox" name="rememberMe"
-                                        class="ng-untouched ng-pristine ng-valid">
-                                    <label for="chkTemp1-2">
-                                        <span class="cbx_off"></span>
-                                        <span class="cbx_bg">
-                                            <span class="cbx_on"></span>
-                                        </span>
-                                        <span class="txt">자동로그인</span>
-                                    </label>
-                                </span>
-                            </div>
                             <button type="submit" class="btn_typeB3 btn_login">
-                                <span>로그인</span>
+                                <span>회원정보 수정하기</span>
                             </button>
                             <div class="sign_menu">
                                 <ul class="clear">
-                                    <li>
-                                        <a>이메일(ID) 찾기</a>
-                                    </li>
-                                    <li>
-                                        <a>비밀번호 재설정</a>
-                                    </li>
-                                    <li>
-                                        <a>회원가입</a>
-                                    </li>
-                                    <li>
-                                        <a>비회원주문조회</a>
-                                    </li>
                                 </ul>
                             </div>
                             <div class="social_login">
-                                <p class="t_tit1">이제 쉽고 간편하게 로그인하세요!</p>
+                                <p class="t_tit1">어디서나 쉽게 간편하게 선물하세요!</p>
                                 <div class="btns">
                                     <a class="btn_typeB3">
                                         <span>
-                                            <i class="naver">naver</i> "로그인"
-                                        </span>
-                                    </a>
-                                    <a class="btn_typeB3" href="kakaoLogin.html">
-                                        <span>
-                                            <i class="kakao">kakao</i> "로그인"
+                                            <i class="kakao">kakao</i> "선물하기"
                                         </span>
                                     </a>
                                 </div>
@@ -562,6 +532,84 @@
         </div>
     </div>
 
+    <script>
+
+        var urlSearch = new URLSearchParams(location.search);
+
+        var value = urlSearch.get("code");
+        console.log(value);
+
+        //4. 토큰발급받기
+        if (value != null) {
+            ajax();
+        }
+
+        function ajax() {
+
+            var url = "http://127.0.0.1:5500/999프로젝트/member_info.html"; //redirect uri
+            var key = "3fabe9798550d202e3e6af2d9e7ed541"; //rest API키 값
+
+
+            var data = "grant_type=authorization_code" +
+                "&client_id=" + key +
+                "&redirect_uri=" + url +
+                "&code=" + value;
+
+            //토큰 요청
+            fetch('https://kauth.kakao.com/oauth/token', {
+                method: "post",
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded; charset=utf-8'
+                }, //"Content-Type" - '요청에 타입'
+                //form 형식의 데이터를 사용할 때 - 키=값&키=값 / json - {키:값}
+                body: data //body - 데이터
+
+            }).then(function (response) {
+                return response.json(); //return이 json 형식으로 와서 받을 때 json으로
+            }).then(function (data) {
+                console.log(data); //정상적으로 실행하면 카카오서버에서 토큰이 넘어온다.
+
+                //브라우저 종료시에 모두 삭제
+                //쿠키 & 세션 스토리지에 토큰 값
+                sessionStorage.setItem("kakao_access", data.access_token); //access 토큰 값
+
+                //SDK에 Access Token 저장
+                //Kakao.Auth.setAccessToken(data.access_token); 
+
+                //사용자 정보 API호출하기
+                getUser(data.access_token);
+            });
+
+        }
+
+        //5. 토큰기반으로 API호출하기 JS로 처리
+        function getUser(token) {
+
+            fetch('https://kapi.kakao.com/v2/user/me', {
+                method: 'post',
+                headers: {
+                    'Authorization': 'Bearer ' + token,
+                    "Content-type": 'application/x-www-form-urlencoded;charset=utf-8',
+
+                },
+
+            }).then(function (response) {
+                return response.json();
+            }).then(function (data) {
+                console.log(data);
+                /* console.log(data.properties.nickname);
+                console.log(data.properties.profile_image); */
+                sessionStorage.setItem('nname', data.properties.nickname);
+
+            })
+
+        }
+
+        var nname = document.querySelector(".t_tit4");
+
+        nname.innerHTML = sessionStorage.getItem('nname') + '님 반갑습니다.';
+
+    </script>
     <footer>
         <div class="footwrap">
             <div class="footinner">
@@ -587,6 +635,7 @@
     </footer>
 
     <script src="JS/head_foot.js"></script>
+
     <script src="JS/link.js"></script>
 
 </body>

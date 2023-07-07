@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="CSS/head_foot.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f1f1f1;
+            margin: 0;
+            padding: 0;
+        }
+
+        .payment-container {
+            max-width: 400px;
+            margin: 50px auto;
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            text-align: left;
+            margin-bottom: 40px;
+        }
+
+        .product-info {
+            display: flex;
+            align-items: center;
+        }
+
+        .product-details {
+            margin-left: 20px;
+        }
+
+        .product-description {
+            color: red;
+        }
+
+        form {
+            margin-top: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+            margin-bottom: 10px;
+        }
+
+        .btn-pay {
+            background-color: red;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            width: 100%;
+        }
+
+        .btn-pay:hover {
+            background-color: darkred;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div class="headwrap">
+            <div class="headinner">
+                <div class="headlogo">
+                    <img src="img/logo1.png" alt="x" class="mainlogo" style="cursor: pointer;">
+                </div>
+                <ul class="headmenu">
+                    <li class="foodmenu">메뉴</li>
+                    <li class="evnt&ptnr">이벤트&제휴</li>
+                    <li class="e_coupon">E쿠폰주문</li>
+                    <li class="grp_order">단체주문</li>
+                </ul>
+                <ul class="headutil">
+                    <li class="location">주소를 입력하세요</li>
+                    <li class="login">Login</li>
+                    <li class="cart">Cart</li>
+                </ul>
+            </div>
+        </div>
+        <div class="headdropdownwrap">
+            <div class="headdropdown">
+                <ul class="menudrop">
+                    <li class="foodmenu">피자</li>
+                    <li class="foodmenu">마이박스(1인메뉴)</li>
+                    <li class="foodmenu">세트</li>
+                    <li class="foodmenu">파스타&치킨</li>
+                    <li class="foodmenu">사이드&음료</li>
+                </ul>
+                <ul class="eventdrop">
+                    <li class="evnt&ptnr">이벤트</li>
+                    <li class="ptnr_discnt">제휴할인</li>
+                </ul>
+                <ul class="organizationdrop">
+                    <li class="grp_order">단체배달</li>
+                    <li class="grp_order">모바일 상품권(단체/기업)</li>
+                    <li class="grp_order">지류상품권</li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <section>
+        <div style="padding-top: 200px; margin-bottom: 50px;">
+            <div style="width: 1360px; margin: 0 auto;">
+                <h2>제품 결제</h2>
+                <div class="product-info">
+                    <img src="" alt="제품 이미지" class="pimg" style="width: 10%; height: 10%;">
+                    <div class="product-details">
+                        <h3 class="producttitle" style="margin-bottom: 20px;">제품명</h3>
+                        <p class="product-description" style="margin-bottom: 20px;">도우</p>
+                        <p class="product-price">가격</p>
+                    </div>
+                </div>
+                <form>
+                    <label for="card-number">카드 번호:</label>
+                    <input type="text" id="card-number" name="card-number" placeholder="카드 번호" required>
+
+                    <label for="card-holder">카드 소유자:</label>
+                    <input type="text" id="card-holder" name="card-holder" placeholder="카드 소유자" required>
+
+                    <label for="expiration-date">만료일:</label>
+                    <input type="text" id="expiration-date" name="expiration-date" placeholder="MM/YY" required>
+
+                    <label for="cvv">CVV:</label>
+                    <input type="text" id="cvv" name="cvv" placeholder="CVV" required>
+
+                    <input type="submit" value="결제" class="btn-pay" style="margin-top: 20px;">
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footwrap">
+            <div class="footinner">
+                <div class="footlogo">
+                    <img src="img/logo1.png" alt="">
+                </div>
+                <div class="footcontent">
+                    <p class="address">서울시 영등포구 국회대로 74길 4, 9~11층</p>
+                    <p class="registerid">
+                        <span>사업자등록번호 120-81-63948</span>
+                        <span>통신판매업신고번호 제2018-서울영등포-1220호</span>
+                    </p>
+                    <p class="ceoname">
+                        <span>한국피자헛유한회사 대표이사 : 조윤상</span>
+                        <span>개인정보 보호책임자 : 윤성호</span>
+                    </p>
+                    <div class="copyright">
+                        <p>Copyright © BY PIZZA HUT KOREA LTD. ALL RIGHT RESERVED</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="JS/head_foot.js"></script>
+
+    <script>
+        document.querySelector('.producttitle').innerHTML = '제품명: ' + sessionStorage.getItem('pizzavariable');
+        document.querySelector('.product-description').innerHTML = '도우: ' + sessionStorage.getItem('pizzadough');
+        document.querySelector('.product-price').innerHTML = '가격: ' + sessionStorage.getItem('pizzaprice');
+        document.querySelector('.pimg').src = sessionStorage.getItem('pizzaimg');
+    </script>
+
+    <script src="JS/link.js"></script>
+
+</body>
+
+</html>

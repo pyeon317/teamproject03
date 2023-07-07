@@ -108,6 +108,15 @@ li {
 
 }
 
+.headlogo {
+    cursor: pointer;
+}
+
+.headmenu {
+    cursor: pointer;
+    
+}
+
 .headdropdown > ul:nth-child(1){
     left: 465px;
 }
