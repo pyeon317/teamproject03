@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+
+
+
+    <link rel="stylesheet" href="css/swiper.css" />
+
+    <link rel="stylesheet" href="css/main.css">
+    <script src="js/swiper.js"></script>
+
+
+    <style>
+        .swiper {
+            width: 600px;
+            height: 300px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 팝업창-닫기를 누르면 팝업창 박스 내용물이 전부 사라짐('innerHTML' > '')
+    세션스토리지는 일단 입장하면 무조건 저장(indexvisit : 202307060823) value는 분단위 갱신 
+    하루동안 안보기를 하면 로컬스토리지에 (close_popup_today : 2023-07-06) 저장. 일단위로 기록하는 듯
+    로컬스토리지에 (orderType : VISIT) 있는 걸 보니 로그인-비로그인을 구분하는 용도인가봄. 로그인하면 다른 value일듯 -->
+
+    <div class="popup">
+        <div class="popup_box">
+
+            <div class="pop_dim"></div>
+
+            <div class="pop_wrap" style="width: 1320px; height: 700px;">
+                <div class="pop_body" style="overflow: hidden;">
+                    <div class="pop_layout">
+                        <div class="inner">
+                            <div class="event_contents" style="height: 612px;">
+                                <span class="inblock relative">
+                                    <img src="img/popup.png" alt="">
+                                    <a href="#" class="link1"></a>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="pop_foot">
+                    <button type="button" class="btn_typeA2"><span>오늘 하루 보지 않기</span></button>
+                    <button type="button" class="btn_typeA1"><span>닫기</span></button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+    <section class="main_visual" style="height: 690px;">
+        <div class="container">
+
+            <div id="myCarousel" class="carousel slide" data-ride="carousel">
+                <!-- Indicators -->
+                <ol class="carousel-indicators">
+                    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                    <li data-target="#myCarousel" data-slide-to="1"></li>
+                    <li data-target="#myCarousel" data-slide-to="2"></li>
+                    <li data-target="#myCarousel" data-slide-to="3"></li>
+                    <li data-target="#myCarousel" data-slide-to="4"></li>
+                    <li data-target="#myCarousel" data-slide-to="5"></li>
+                </ol>
+
+                <!-- Wrapper for slides -->
+                <div class="carousel-inner">
+                    <div class="item active">
+                        <img src="img/main0.png" alt="0" style="width:100%;">
+                    </div>
+
+                    <div class="item">
+                        <img src="img/main1.png" alt="1" style="width:100%;">
+                    </div>
+
+                    <div class="item">
+                        <img src="img/main2.png" alt="2" style="width:100%;">
+                    </div>
+
+                    <div class="item">
+                        <img src="img/main3.png" alt="3" style="width:100%;">
+                    </div>
+
+                    <div class="item">
+                        <img src="img/main4.png" alt="4" style="width:100%;">
+                    </div>
+
+                    <div class="item">
+                        <img src="img/main5.png" alt="5" style="width:100%;">
+                    </div>
+                </div>
+
+                <!-- Left and right controls -->
+                <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+                    <span class="glyphicon glyphicon-chevron-left"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="right carousel-control" href="#myCarousel" data-slide="next">
+                    <span class="glyphicon glyphicon-chevron-right"></span>
+                    <span class="sr-only">Next</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="personal_area">
+        <div class="w1440">
+            <div class="inner">
+                <div class="order_wrapper">
+                    <ul class="clear">
+                        <li>
+                            <button class="btn_order delivery btn_pop_open">
+                                <img src="img/ic_delivery.png" alt="">
+                                <span>배달주문</span>
+                            </button>
+                        </li>
+                        <li>
+                            <button class="btn_order packaging btn_pop_open">
+                                <img src="img/ic_favorite.png" alt="">
+                                <span>포장주문</span>
+                            </button>
+                        </li>
+                        <li>
+                            <button class="btn_order favorite btn_pop_open">
+                                <img src="img/ic_packaging.png" alt="">
+                                <span>마이오더</span>
+                            </button>
+                        </li>
+
+                    </ul>
+                </div>
+                <div class="login_area">
+                    <div class="login_before">
+                        <div class="clear">
+                            <p class="tit1" style="text-decoration: none;">
+                            
+                                <img src="img/ic_login.png" alt="" style="float: left;">
+                                <span class="bold">로그인</span>
+                                하고 더 많은 혜택을 즐겨보세요!
+                            
+                            </p>
+                            <div class="btn_set" style="overflow: hidden;">
+                                <dd>
+                                    <a href="#" class="btn_typeB7" style="text-decoration: none;">
+
+                                        <span>로그인/회원가입</span>
+                                    </a>
+                                    <a href="#" class="btn_typeB7" style="text-decoration: none;">
+                                        <span>비회원 주문조회</span>
+                                    </a>
+                                </dd>
+                                <dd>
+                                    <a href="#" class="btn_typeB7" style="text-decoration: none;">
+                                        <em>나의 스탬프</em>
+                                        <span>적립 현황</span>
+                                    </a>
+                                </dd>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="banner_area">
+        <div class="w1440 clear">
+            <div class="bnr_info">
+                <p class="tit">모바일상품권 선물하기</p>
+                <p class="desc1">피자로 마음을 선물하세요</p>
+                <a href="#" class="btn_typeD1">
+                    <span style="float: left;">자세히보기</span>
+                    <img src="img/ic_arrow6.png" alt="" style="float: left;">
+                </a>
+            </div>
+            <div class="bnr_main">
+                <span class="swiper_box">
+                    <!-- Slider main container -->
+                    <div class="swiper swiper-container">
+                        <!-- Additional required wrapper -->
+                        <div class="swiper-wrapper" style="transition-duration: 0ms;">
+                            <!-- Slides -->
+                            <div class="swiper-slide" data-swiper-slide-index="0" style="width: 764px; transition-duration: 0ms; opacity: 1; transform:
+                                translate3d(0px, 0px, 0px);"><a href="#"><img src="img/ban1.png" alt="1"></a></div>
+                            <div class="swiper-slide" data-swiper-slide-index="1" style="width: 764px; transition-duration: 0ms; opacity: 1; transform:
+                                translate3d(0px, 0px, 0px);"><a href="#"><img src="img/ban2.png" alt="2"></a></div>
+                            <div class="swiper-slide" data-swiper-slide-index="2" style="width: 764px; transition-duration: 0ms; opacity: 1; transform:
+                                translate3d(0px, 0px, 0px);"><a href="#"><img src="img/ban3.png" alt="3"></a></div>
+                            <div class="swiper-slide" data-swiper-slide-index="3" style="width: 764px; transition-duration: 0ms; opacity: 1; transform:
+                                translate3d(0px, 0px, 0px);"><a href="#"><img src="img/ban4.png" alt="4"></a></div>
+
+                        </div>
+
+                        <!-- If we need pagination -->
+                        <div class="swiper-pagination"></div>
+
+                        <!-- If we need navigation buttons -->
+                        <!-- <div class="swiper-button-prev"></div>
+                        <div class="swiper-button-next"></div> -->
+
+                    </div>
+                </span>
+            </div>
+            <div class="bnr_thumbs">
+                <div
+                    class="swiper swiper-container bnrThumbsSwiper swiper-container-initialized swiper-container-vertical">
+                    <!-- Additional required wrapper -->
+                    <div class="swiper-wrapper"
+                        style="transition-duration: 0ms; transform: translate3d(0px, 0px, 0px);">
+                        <!-- Slides -->
+                        <div class="swiper-slide" data-swiper-slide-index="1"
+                            style="height: 146px; margin-bottom: 24px;">
+                            <figure class="images"><span style="background-image: url('img/ban1.png');"></span></figure>
+                        </div>
+                        <div class="swiper-slide" data-swiper-slide-index="2"
+                            style="height: 146px; margin-bottom: 24px;">
+                            <figure class="images"><span style="background-image: url('img/ban2.png');"></span></figure>
+                        </div>
+                        <div class="swiper-slide" data-swiper-slide-index="3"
+                            style="height: 146px; margin-bottom: 24px;">
+                            <figure class="images"><span style="background-image: url('img/ban3.png');"></span></figure>
+                        </div>
+                        <div class="swiper-slide" data-swiper-slide-index="4"
+                            style="height: 146px; margin-bottom: 24px;">
+                            <figure class="images"><span style="background-image: url('img/ban4.png');"></span></figure>
+                        </div>
+
+                    </div>
+
+                    <!-- If we need pagination -->
+                    <!-- <div class="swiper-pagination"></div> -->
+
+                </div>
+                <div
+                    class="swiper swiper-container bnrThumbsSwiper swiper-container-initialized swiper-container-vertical">
+                    <!-- Additional required wrapper -->
+                    <div class="swiper-wrapper"
+                        style="transition-duration: 0ms; transform: translate3d(0px, 0px, 0px);">
+                        <!-- Slides -->
+                        <div class="swiper-slide" data-swiper-slide-index="2"
+                            style="height: 146px; margin-bottom: 24px;">
+                            <figure class="images"><span style="background-image: url('img/ban2.png');"></span></figure>
+                        </div>
+                        <div class="swiper-slide" data-swiper-slide-index="3"
+                            style="height: 146px; margin-bottom: 24px;">
+                            <figure class="images"><span style="background-image: url('img/ban3.png');"></span></figure>
+                        </div>
+                        <div class="swiper-slide" data-swiper-slide-index="4"
+                            style="height: 146px; margin-bottom: 24px;">
+                            <figure class="images"><span style="background-image: url('img/ban4.png');"></span></figure>
+                        </div>
+                        <div class="swiper-slide" data-swiper-slide-index="1"
+                            style="height: 146px; margin-bottom: 24px;">
+                            <figure class="images"><span style="background-image: url('img/ban1.png');"></span></figure>
+                        </div>
+
+                    </div>
+
+                    <!-- If we need pagination -->
+                    <!-- <div class="swiper-pagination"></div> -->
+
+                </div>
+                <div
+                    class="swiper swiper-container bnrThumbsSwiper swiper-container-initialized swiper-container-vertical">
+                    <!-- Additional required wrapper -->
+                    <div class="swiper-wrapper"
+                        style="transition-duration: 0ms; transform: translate3d(0px, 0px, 0px);">
+                        <!-- Slides -->
+                        <div class="swiper-slide" data-swiper-slide-index="3"
+                            style="height: 146px; margin-bottom: 24px;">
+                            <figure class="images"><span style="background-image: url('img/ban3.png');"></span></figure>
+                        </div>
+                        <div class="swiper-slide" data-swiper-slide-index="4"
+                            style="height: 146px; margin-bottom: 24px;">
+                            <figure class="images"><span style="background-image: url('img/ban4.png');"></span></figure>
+                        </div>
+                        <div class="swiper-slide" data-swiper-slide-index="1"
+                            style="height: 146px; margin-bottom: 24px;">
+                            <figure class="images"><span style="background-image: url('img/ban1.png');"></span></figure>
+                        </div>
+                        <div class="swiper-slide" data-swiper-slide-index="2"
+                            style="height: 146px; margin-bottom: 24px;">
+                            <figure class="images"><span style="background-image: url('img/ban2.png');"></span></figure>
+                        </div>
+
+                    </div>
+
+                    <!-- If we need pagination -->
+                    <!-- <div class="swiper-pagination"></div> -->
+
+                </div>
+
+
+            </div>
+    </section>
+
+
+
+    <script src="js/main.js"></script>
+
+</body>
+
+</html>
