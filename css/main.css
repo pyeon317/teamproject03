@@ -55,7 +55,7 @@ a:focus, a:active, a:visited{
 
 dd{
     display: block;
-    margin-inline-start: 40px;
+    /* margin-inline-start: 40px; */
 }
 
 .event_contents .link1 {
@@ -233,6 +233,7 @@ button > span {
     background-repeat: no-repeat;
     box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.1);
     transition: .2s;
+    position: relative;
 
 
 }
@@ -241,47 +242,45 @@ button > span {
     font-size: 24px;
 }
 
-.personal_area .order_wrapper li .btn_order .delivery{
-    background-image: url("img/ic_delivery.png");
+.personal_area .order_wrapper li .btn_order img{
+    position: absolute;
+    left: 180px;
+    top: 35px;
+    
 }
 
-.personal_area .order_wrapper li .btn_order .packaging{
-    background-image: url("img/ic_packaging.png");
-}
 
-.personal_area .order_wrapper li .btn_order .delivery{
-    background-image: url("img/ic_favorite.png");
-}
 
 .personal_area .login_area .login_before{
     margin-top: -41px;
 }
 
-.clear::after{
+/* .clear{
     content: ".";
     display: block;
     clear: both;
     height: 0;
     font-size: 0;
     visibility: hidden;
-}
+} */
 
 .personal_area .login_area .tit1{
     font-weight: 200;
     font-size: 28px;
     position: relative;
-    padding-left: 96px;
+    
 }
 
 .personal_area .login_area .login_before .tit1{
     float: none;
 }
 
-.personal_area .login_area .login_before .tit1::before{
+/* .personal_area .login_area .login_before .tit1::before{
     background-image: url("img/ic_login.png");
-}
+    
+} */
 
-.personal_area .login_area .tit1::before{
+/* .personal_area .login_area .tit1::before{
     content: '';
     position: absolute;
     left: 0;
@@ -292,7 +291,7 @@ button > span {
     height: 80px;
     border-radius: 50%;
     background: #fff no-repeat auto center;
-}
+} */
 
 .personal_area .login_area .tit1 .bold{
     font-family: inherit;
@@ -303,6 +302,7 @@ button > span {
 
 .personal_area .login_area .login_before .btn_set{
     display: flex;
+    justify-content: space-between;
     -webkit-box-align: center;
     align-items: center;
     margin-top: 48px;
@@ -415,14 +415,13 @@ em{
     font-size: 16px;
 }
 
-.btn_typeD1::after{
-    content: '';
+.btn_typeD1 > img{
     width: 7px;
     height: 12px;
     position: absolute;
     right: 0;
-    top: 9px;
-    background: url("img/ic_arrow6.png") no-repeat right center;
+    top: 5px;
+    
 }
 
 .banner_area .bnr_main{
@@ -499,15 +498,15 @@ em{
 
 .banner_area .images{
     display: block;   
-    width: 100%;
+    width: 280px;
     height: 100%;
 }
 
 .banner_area .images span{
     display: block;
-    width: 100%;
+    width: 280px;
     height: 100%;
     background-repeat: no-repeat;
     background-position: center;
-    background-size: 100%;
+    background-size: cover;
 }

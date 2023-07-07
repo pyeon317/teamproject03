@@ -105,3 +105,7 @@ setInterval(function () {
 
 }, 5175);
 
+var img = document.querySelector(".clear");
+
+img.onclick = function(){
+    console.log(click.value)};
