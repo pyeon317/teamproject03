@@ -16,7 +16,7 @@ headwrap.onclick = function(e){
         window.location.href = 'evnt&ptnr.html';
     }
     else if(e.target.classList.contains('ptnr_discnt')){
-        console.log(e.target.classList);
+        
         window.location.href = 'ptnr_discnt.html';
     }
     else if(e.target.classList.contains('e_coupon')){
